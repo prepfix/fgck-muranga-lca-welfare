@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Prepfix Welfare Toolkit</title>
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#0b6b3a">
@@ -157,10 +157,74 @@ table.rg .chip{padding:1px 8px}
 table.rg .xs{padding:2px 8px;font-size:12.5px}
 #v table:not(.rg) th,#v table:not(.rg) td{padding:4px 8px}
 header img.logo{width:54px;height:54px;border-radius:50%;background:#fff;padding:2px;box-shadow:0 0 0 2px rgba(255,255,255,.55),0 2px 6px rgba(0,0,0,.2);flex:none}
-</style></head><body>
-<header><img class="logo" src="logo.png" alt=""><div class="t"><b>Prepfix Welfare Toolkit</b><b>FGCK MURANG'A TOWN LCA WELFARE GROUP</b><span>Registration, Cases &amp; Contributions (Paybill)</span></div></header>
+
+@keyframes pxGlow{0%,100%{box-shadow:0 0 0 2px rgba(255,255,255,.55),0 0 8px 2px rgba(255,214,102,.55),0 0 18px 6px rgba(255,170,0,.30)}50%{box-shadow:0 0 0 2px rgba(255,255,255,.9),0 0 16px 6px rgba(255,214,102,.95),0 0 34px 14px rgba(255,170,0,.55)}}
+@keyframes pxGlowG{0%,100%{filter:drop-shadow(0 0 5px rgba(243,156,18,.55)) drop-shadow(0 0 12px rgba(30,111,217,.25))}50%{filter:drop-shadow(0 0 12px rgba(243,156,18,.95)) drop-shadow(0 0 26px rgba(30,111,217,.55))}}
+@keyframes pxText{0%,100%{text-shadow:0 0 4px #ffd666,0 0 10px #ffb300,0 0 18px #ff9800}50%{text-shadow:0 0 8px #fff3c4,0 0 20px #ffd666,0 0 36px #ffb300,0 0 52px #ff9800}}
+header img.logo{animation:pxGlow 2.2s ease-in-out infinite}
+#gate .glogo{animation:pxGlowG 2.2s ease-in-out infinite;border-radius:50%}
+.devcredit{margin:18px auto 14px;padding:10px 16px;max-width:max-content;text-align:center;font:800 13px/1.4 "Segoe UI",system-ui,sans-serif;letter-spacing:.8px;text-transform:uppercase;color:#ffe9a8;background:#0d1b14;border:1px solid rgba(255,214,102,.5);border-radius:999px;animation:pxText 2.2s ease-in-out infinite;box-shadow:0 0 14px rgba(255,179,0,.35)}
+.devcredit a{color:inherit;text-decoration:none;white-space:nowrap}
+#gate .devcredit{margin:14px auto 0;font-size:11.5px;padding:8px 12px}
+@media print{.devcredit{display:none}}
+@media(prefers-reduced-motion:reduce){header img.logo,#gate .glogo,.devcredit{animation:none}}
+</style><style>
+/* ---- gentle glowing footer ---- */
+@keyframes pxText2{0%,100%{text-shadow:0 0 3px rgba(255,214,102,.5),0 0 8px rgba(255,179,0,.3);color:#ffe9a8}50%{text-shadow:0 0 5px rgba(255,226,140,.8),0 0 14px rgba(255,179,0,.5);color:#fff1c4}}
+.devcredit{position:fixed;left:0;right:0;bottom:0;z-index:60;margin:0;max-width:none;border-radius:0;border-width:1px 0 0;padding:9px 12px;font-size:13.5px;animation:pxText2 4.5s ease-in-out infinite;box-shadow:0 -2px 14px rgba(255,179,0,.16)}
+#gate .devcredit{position:static;margin:14px auto 0;max-width:max-content;border-radius:999px;border-width:1px;font-size:11.5px;padding:8px 12px;box-shadow:none}
+body{padding-bottom:46px}
+@media print{body{padding-bottom:0}.devcredit{display:none}}
+@media(prefers-reduced-motion:reduce){.devcredit{animation:none}}
+.instbox{display:none}
+.instbox.on{display:block;margin:10px auto;max-width:560px;padding:0 12px;box-sizing:border-box}
+.instbox .ib{display:flex;align-items:center;gap:10px;background:#fff7e0;border:1px solid #f0c24b;border-radius:12px;padding:10px 12px;text-align:left;font:600 13.5px/1.4 "Segoe UI",system-ui,sans-serif;color:#3b2f00}
+.instbox .ib button{flex:none;margin-left:auto;background:linear-gradient(100deg,#13286b,#1e6fd9);color:#fff;border:0;border-radius:10px;padding:10px 16px;font:700 14px "Segoe UI",system-ui,sans-serif;cursor:pointer}
+.instbox .ib .ic{font-size:22px;flex:none}
+#gate .instbox.on{padding:0;margin:12px 0 0}
+@media print{.instbox{display:none!important}}
+/* ---- big header like the desktop toolkit; header, tabs and footer stay fixed, only the middle scrolls ---- */
+html,body{height:100%;overflow:hidden}
+body{height:100vh;height:100dvh;padding-bottom:0}
+header{flex:none;padding:18px 28px;gap:22px;min-height:112px;background:radial-gradient(1200px 260px at 15% -40%,rgba(255,255,255,.18),transparent 60%),linear-gradient(100deg,var(--ac2),var(--ac))}
+header img.logo{width:84px;height:84px;padding:3px}
+header .t{flex:1;display:flex;flex-direction:column;justify-content:center;min-width:0}
+header .t b+b{order:-1;font-size:clamp(17px,4.6vw,38px);line-height:1.12;font-weight:800;letter-spacing:1px;text-shadow:0 2px 10px rgba(0,0,0,.25);opacity:1}
+header .t b:first-child{order:0;font-size:clamp(13px,3.2vw,22px);font-weight:700;letter-spacing:2px;margin-top:6px;opacity:.95}
+header .t span{order:1;font-size:clamp(12px,2.8vw,16px);opacity:.88;margin-top:4px;letter-spacing:.3px}
+.tabbar{flex:none}
+main{flex:1 1 auto;min-height:0;overflow:auto;-webkit-overflow-scrolling:touch;padding-bottom:64px}
+.instbox{flex:none}
+.devcredit{position:fixed;left:0;right:0;bottom:0;z-index:60;padding-bottom:calc(9px + env(safe-area-inset-bottom,0px));background:#0d1b14}
+#gate .devcredit{position:static;padding-bottom:8px}
+@media(max-width:700px){header{padding:12px 14px;gap:12px;min-height:0}header img.logo{width:62px;height:62px}}
+@media print{html,body{height:auto;overflow:visible}main{overflow:visible}}
+</style>
+<script>
+window.__ip=null;
+window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();window.__ip=e;pxInst()});
+window.addEventListener('appinstalled',function(){window.__ip=null;pxInst()});
+function pxInst(){
+ var sa=(window.matchMedia&&matchMedia('(display-mode: standalone)').matches)||navigator.standalone===true;
+ var ios=/iphone|ipad|ipod/i.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+ var els=document.querySelectorAll('.instbox');
+ for(var i=0;i<els.length;i++){var el=els[i];
+  if(sa){el.className='instbox';el.innerHTML='';continue}
+  el.className='instbox on';
+  if(window.__ip){el.innerHTML='<div class="ib"><span class="ic">&#128241;</span><span>Install this app on your phone</span><button type="button" onclick="pxDoInst()">Install</button></div>'}
+  else if(ios){el.innerHTML='<div class="ib"><span class="ic">&#128241;</span><span>To install on iPhone: open this link in <b>Safari</b>, tap the <b>Share</b> button, then <b>Add to Home Screen</b>.</span></div>'}
+  else{el.innerHTML='<div class="ib"><span class="ic">&#128241;</span><span>To install: open this link in <b>Chrome</b>, tap the <b>menu (3 dots)</b>, then <b>Install app</b>.</span></div>'}
+ }
+}
+function pxDoInst(){var p=window.__ip;if(!p)return;p.prompt();p.userChoice.then(function(){window.__ip=null;pxInst()}).catch(function(){})}
+document.addEventListener('DOMContentLoaded',pxInst);
+</script>
+</head><body>
+<header><img class="logo" src="logo.png" alt=""><div class="t"><b>Prepfix Welfare Toolkit</b><b>FGCK MURANG'A TOWN LCA WELFARE GROUP</b></div></header>
+<div class="instbox" id="inst_top"></div>
 <div class="tabbar"><div class="tabs" id="tabs"></div></div>
 <main><div id="v"></div></main>
+<div class="devcredit">Developed by Cyrus Ireri &middot; <a href="tel:0720872582">0720872582</a></div>
 <style>
 #gate{position:fixed;inset:0;z-index:99;display:none;align-items:center;justify-content:center;padding:18px;background:radial-gradient(circle at 50% 0%,#fff 0,#eaf1fb 55%,#d7e3f6 100%);overflow:auto;font-family:"Segoe UI",system-ui,sans-serif}
 #gate .gw{background:#fff;border-radius:18px;padding:22px 22px 18px;max-width:390px;width:100%;box-shadow:0 10px 40px rgba(19,40,107,.18);text-align:center;border-top:5px solid #f39c12;margin:auto}
@@ -185,6 +249,7 @@ header img.logo{width:54px;height:54px;border-radius:50%;background:#fff;padding
 <img class="glogo" src="logo.png" alt="Prepfix Welfare Toolkit">
 <h1>Prepfix Welfare Toolkit</h1>
 <div class="gsub">FGCK Murang'a Town LCA Welfare Group</div>
+<div class="instbox" id="inst_gate"></div>
 <div id="g_mem">
  <label class="gl" for="g_p">Phone number (the one the welfare group registered)</label><input class="gi" id="g_p" type="tel" inputmode="tel" autocomplete="tel" placeholder="e.g. 0712 345 678">
  <label class="gl" for="g_u">Make a PIN (4 numbers)</label><input class="gi" id="g_u" type="password" inputmode="numeric" maxlength="4" autocomplete="new-password" placeholder="4 numbers">
@@ -194,7 +259,7 @@ header img.logo{width:54px;height:54px;border-radius:50%;background:#fff;padding
  <p class="gnote">For registered members only. You stay signed in on this phone until you sign out. One phone per number. You will see only your own welfare records.</p>
 </div>
 
-</div></div>
+<div class="devcredit">Developed by Cyrus Ireri &middot; <a href="tel:0720872582">0720872582</a></div></div></div>
 
 <script>
 (function(){
@@ -284,7 +349,7 @@ function memView(r,g,at){
   +(m.dd&&m.dt?'<tr><td class="mu">Date of passing</td><td>'+esc(m.dt)+'</td></tr>':'')
   +(ben||'<tr><td class="mu">Spouse &amp; parents</td><td class="mu">None listed</td></tr>')+'</table></div>'}).join('')
   +'<div class="card"><b>Children</b>'+(r.kids.length?'<div style="margin-top:4px">'+r.kids.map(esc).join('<br>')+'</div>':'<div class="mu">None listed</div>')+'</div>';
- var gc=(g.cases||[]).map(function(c){var pc=c.due?Math.round(100*c.paid/c.due):0;return '<tr><td>'+esc(c.n)+(c.d?' <span class="mu">'+esc(c.d)+'</span>':'')+'</td><td class="r">'+fmt(c.a)+'</td><td class="r">'+fmt(c.col)+'</td><td class="r">'+c.paid+' of '+c.due+' ('+pc+'%)</td></tr>'}).join('');
+ var gc=(g.cases||[]).map(function(c){var pc=c.due?Math.round(100*c.paid/c.due):0;return '<tr><td>'+esc(c.n)+(c.d?' <span class="mu">'+esc(c.d)+'</span>':'')+(c.dn?'<div class="mu">Passed on: <b>'+esc(c.dn)+'</b></div>':'')+(c.bd?'<div class="mu">Burial: <b>'+esc((function(d){var x=new Date(d+'T00:00:00');return isNaN(x)?d:x.toLocaleDateString('en-KE',{day:'numeric',month:'long',year:'numeric'})})(c.bd))+'</b></div>':'')+'</td><td class="r">'+fmt(c.a)+'</td><td class="r">'+fmt(c.col)+'</td><td class="r">'+c.paid+' of '+c.due+' ('+pc+'%)</td></tr>'}).join('');
  var gt=(g.cases||[]).reduce(function(a,c){return a+c.col},0);
  var grp='<div class="card sc"><b>Welfare group at a glance</b><div class="mu" style="margin:4px 0 8px">Totals for the whole group. What each member has contributed is private and is not shown to anyone else.</div>'
   +'<table><tr><th>Case</th><th class="r">Per family</th><th class="r">Collected (KES)</th><th class="r">Families paid</th></tr>'+(gc||'<tr><td colspan="4" class="mu">No cases yet.</td></tr>')

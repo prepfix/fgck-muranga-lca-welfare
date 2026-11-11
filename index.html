@@ -383,7 +383,7 @@ function memView(r,g,at){
  var v=$e('v');v.style.maxWidth='860px';
  v.innerHTML='<div class="mvw"><div class="card mwel"><div class="row" style="justify-content:space-between;margin:0"><div><div class="mu">Welcome</div><h2>'+who+'</h2><div class="mu">Unit '+esc(r.u)+' · '+(r.fam?'Family (couple counted as one)':'Individual')+(asat?' · Records as at '+esc(asat):'')+'</div></div>'
   +'<div class="row noprint" style="margin:0"><button onclick="mRefresh()">Refresh</button><button onclick="print()">Print</button><button onclick="mLogout()">Sign out</button></div></div></div>'
-  +ban+big
+  +big
   +'<div class="kp"><div>Total contributed<b>KES '+fmt(r.tot)+'</b></div><div>Cases contributed to<b>'+r.cnt+' of '+r.due+'</b></div><div>Outstanding<b class="'+(r.out?'bad':'')+'">KES '+fmt(r.out)+'</b></div><div>Registration fee<b style="font-size:15px">'+fee+'</b></div></div>'
   +pay
   +'<div class="card sc"><b>My contributions per case</b><table style="margin-top:6px"><tr><th>Case</th><th class="r">Expected</th><th class="r">Paid</th><th class="r">Balance</th><th>Status</th></tr>'+rows
